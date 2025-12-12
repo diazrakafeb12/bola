@@ -1,0 +1,77 @@
+  <!-- index.html -->
+  <!doctype html>
+  <html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home - Klub Sepakbola</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="brand">
+          <!-- simple soccer ball SVG + text -->
+          <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <circle cx="32" cy="32" r="30" fill="white" stroke="#0b72c4" stroke-width="2"/>
+            <path d="M32 6 L23 20 L10 22 L18 33 L15 46 L32 40 L49 46 L46 33 L54 22 L41 20 Z" fill="#0b72c4"/>
+            <circle cx="32" cy="32" r="3" fill="#e6f5ff"/>
+          </svg>
+          <span class="brand-text">Blue FC</span>
+        </a>
+
+        <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu">
+          <span class="hamburger"></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav" aria-label="Navigasi utama">
+          <ul class="nav-list">
+            <li><a href="index.html" >Beranda</a></li>
+            <li><a href="#">Jadwal</a></li>
+            <li><a href="member.php">Pemain</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#"class="active">Pendaftaran</a></li>
+            <li><a href="login.php">Login Admin</a></li>
+
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+<h2>Form Pendaftaran Pemain</h2>
+
+<form action="proses.php" method="POST" enctype="multipart/form-data">
+
+    Nama:<br>
+    <input type="text" name="nama" required><br><br>
+
+    Umur:<br>
+    <input type="number" name="umur" required><br><br>
+
+    Posisi:<br>
+    <select name="posisi">
+        <option>Penyerang</option>
+        <option>Gelandang</option>
+        <option>Bek</option>
+        <option>Kiper</option>
+    </select><br><br>
+
+    Email:<br>
+    <input type="email" name="email" required><br><br>
+
+    No HP:<br>
+    <input type="text" name="nohp" required><br><br>
+
+    Foto Pemain:<br>
+    <input type="file" name="foto" required><br><br>
+
+    <button type="submit">Daftar</button>
+
+</form>
+
+</body>
+</html>

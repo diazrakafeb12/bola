@@ -1,0 +1,154 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home - Klub Sepakbola</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <!-- simple soccer ball SVG + text -->
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="white" stroke="#0b72c4" stroke-width="2"/>
+          <path d="M32 6 L23 20 L10 22 L18 33 L15 46 L32 40 L49 46 L46 33 L54 22 L41 20 Z" fill="#0b72c4"/>
+          <circle cx="32" cy="32" r="3" fill="#e6f5ff"/>
+        </svg>
+        <span class="brand-text">Blue FC</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="#" class="active">Beranda</a></li>
+          <li><a href="#">Jadwal</a></li>
+          <li><a href="member.php">Pemain</a></li>
+          <li><a href="#">Berita</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+          <li><a href="login.php">Login Admin</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Selamat Datang di <span>Blue FC</span></h1>
+          <p class="lead">Semangat biru muda — klub lokal yang menjunjung tinggi permainan, semangat tim, dan fair play.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary">Lihat Jadwal</a>
+            <a href="#" class="btn btn-outline">Beli Tiket</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- simple match card -->
+          <div class="card match-card">
+            <div class="match-top">Pertandingan berikutnya</div>
+            <div class="match-teams">
+              <div class="team">
+                <div class="team-logo">BFC</div>
+                <div class="team-name">Blue FC</div>
+              </div>
+              <div class="vs">vs</div>
+              <div class="team">
+                <div class="team-logo alt">AWY</div>
+                <div class="team-name">Away Club</div>
+              </div>
+            </div>
+            <div class="match-info">
+              <div>12 Des 2025 • 19:00</div>
+              <div>Stadion Merdeka</div>
+            </div>
+            <a class="btn btn-sm" href="#">Detail</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <h2 class="section-title">Highlight</h2>
+      <div class="grid">
+        <article class="feature">
+          <div class="feature-icon">⚽</div>
+          <h3>Akademi Pemain Muda</h3>
+          <p>Program pembinaan usia muda untuk mencetak talenta masa depan klub.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🎟️</div>
+          <h3>Tiket & Membership</h3>
+          <p>Jadilah member untuk dapat diskon tiket dan merchandise resmi.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">📰</div>
+          <h3>Berita Terbaru</h3>
+          <p>Informasi latihan, transfer, dan liputan pertandingan klub.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="news container">
+      <h2 class="section-title">Berita Terbaru</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-thumb" aria-hidden="true"></div>
+          <div class="news-body">
+            <h4>Latihan intensif menjelang laga penting</h4>
+            <p>Tim menjalani persiapan keras dengan fokus taktik dan kebugaran.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-thumb" aria-hidden="true"></div>
+          <div class="news-body">
+            <h4>Pelatih umumkan susunan pemain</h4>
+            <p>Daftar pemain yang kemungkinan besar turun pada pertandingan akhir pekan.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Blue FC. Semua hak dilindungi.</div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Twitter">TW</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small script for nav toggle + year injection
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('main-nav');
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+        btn.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('open');
+      });
+
+      // insert current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
